@@ -1,11 +1,11 @@
-//criar o objeto usuário
+//create an user object 
 const user = {
     name: 'Mariana',
     transactions: [],
     balance: 0
   }
   
-  //adiciona transação
+  //add transaction
   function createTransaction(transaction) {
     user.transactions.push(transaction)
   
@@ -16,7 +16,7 @@ const user = {
     }
   }
   
-  //relatórios
+  //reports
   function getHigherTransactionByType(type) {
     let higherTransaction
     let higherValue = 0
