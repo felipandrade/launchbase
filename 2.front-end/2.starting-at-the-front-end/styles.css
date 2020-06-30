@@ -1,0 +1,55 @@
+/* 
+Obs:
+1. as tags pai/filhas trabalham em camadas, ex: se adc um 'background' numa 'div' e no 'header', sendo que a 'div' está dentro da 'header', o CSS irá adotar as configurações da 'div' ao invés da 'header', sempre de dentro pra fora.
+2. Para chamar um 'id' do HTML no CSS, usa-se o '#' e para chamar uma 'class' usa-se um '.' (ponto).
+
+Anotações:
+1. espaçamento externo do elemento: margin-top: 50px;
+2. remove as bordas laterais: border-left: none; / border-right: none;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@700&display=swap');
+
+* { /*mini-reset do CSS*/
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    background: #282a36; /* cor de fundo da página*/
+    font-family: 'Monda', sans-serif;
+}
+
+header {
+    padding: 32px; /*espaçamento interno do elemento (usando short render)*/
+    border-bottom: 1px solid #333; /*limite da bordar*/
+    background: rgba(0, 0, 0, 0.274); /*o último valor indica a transparência*/
+}
+
+header div {
+    text-align: center;
+}
+
+header div a { /*estilizando mais especificamente um elemento, no caso, os links*/
+    color: whitesmoke;
+    font-size: 18px;
+    line-height: 28px; /*usar 10px a mais que o 'font-size', mas não é obrigatório*/
+    margin: 0 16px; /*mexe no espaçamento ao redor do texto*/
+    text-decoration: none; /*remove o underline*/
+}
+
+header div a:hover { /*ativa uma ação ao passar o mouse em cima do elemento*/
+    color: #507afb;
+    transition: color 300ms; /*muda vagarosamente a cor ao passar o mouse em cima do texto*/
+}
+
+#wrapper {
+    padding: 32px;
+    padding-bottom: 32px; /*seguindo o padrão 'padding do header'*/
+}
+
+#wrapper img {
+    border-radius: 50%; /*arredondamento das bordas da foto, se a foto for quadrado, usar '%'*/
+    border: 5px solid #507afb; /*adiciona bordar ao redor da foto*/
+}
