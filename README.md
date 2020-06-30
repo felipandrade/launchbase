@@ -28,10 +28,10 @@
 
 ## :rocket: Desafios
 
-- [Primeiros passos com JavaScript](challenges/1.introduction-to-web/challenge-1.1/README.md)
-- [Lidando com objetos e vetores](challenges/1.introduction-to-web/challenge-1.2/README.md)
-- [Funções e estruturas de repetição](challenges/1.introduction-to-web/challenge-1.3/README.md)
-- [Aplicação: Operações bancárias](challenges/1.introduction-to-web/challenge-1.4/README.md)
+- [Primeiros passos com JavaScript](1.challenges/1.introduction-to-web/challenge-1.1/README.md)
+- [Lidando com objetos e vetores](1.challenges/1.introduction-to-web/challenge-1.2/README.md)
+- [Funções e estruturas de repetição](1.challenges/1.introduction-to-web/challenge-1.3/README.md)
+- [Aplicação: Operações bancárias](/1.challenges/1.introduction-to-web/challenge-1.4/README.md)
 
 ## :calendar: Entrega
 
