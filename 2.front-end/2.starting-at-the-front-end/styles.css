@@ -1,22 +1,12 @@
-/* 
-Obs:
-1. as tags pai/filhas trabalham em camadas, ex: se adc um 'background' numa 'div' e no 'header', sendo que a 'div' está dentro da 'header', o CSS irá adotar as configurações da 'div' ao invés da 'header', sempre de dentro pra fora.
-2. Para chamar um 'id' do HTML no CSS, usa-se o '#' e para chamar uma 'class' usa-se um '.' (ponto).
-
-Anotações:
-1. espaçamento externo do elemento: margin-top: 50px;
-2. remove as bordas laterais: border-left: none; / border-right: none;
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-:root { /*criando variáveis com CSS*/
+:root {
     --color-green: #50fa7b;
     --color-whitesmoke: whitesmoke;
     --color-purple: #7159c1;
 }
 
-* { /*mini-reset do CSS*/
+* {
     margin: 0;
     border: 0;
     padding: 0;
@@ -24,43 +14,43 @@ Anotações:
 
 body {
     color: var(--color-whitesmoke);
-    background: #282a36; /* cor de fundo da página*/
+    background: #282a36;
     font-family: 'Open Sans', sans-serif;
 }
 
 header {
-    padding: 32px; /*espaçamento interno do elemento (usando short render)*/
-    border-bottom: 1px solid #333; /*limite da bordar*/
-    background: rgba(0, 0, 0, 0.274); /*o último valor indica a transparência*/
+    padding: 32px;
+    border-bottom: 1px solid #333;
+    background: rgba(0, 0, 0, 0.274);
 }
 
 .links {
     text-align: center;
 }
 
-.links a { /*estilizando mais especificamente um elemento, no caso, os links*/
+.links a {
     color: var(--color-whitesmoke);
     font-weight: bold;
     font-size: 18px;
-    line-height: 28px; /*usar 10px a mais que o 'font-size', mas não é obrigatório*/
-    margin: 0 16px; /*mexe no espaçamento ao redor do texto*/
-    text-decoration: none; /*remove o underline*/
+    line-height: 28px;
+    margin: 0 16px;
+    text-decoration: none;
 }
 
-.links a:hover { /*ativa uma ação ao passar o mouse em cima do elemento*/
-    color: var(--color-green); /*chamando a variável de cor*/
-    transition: color 200ms; /*muda vagarosamente a cor ao passar o mouse em cima do texto*/
+.links a:hover {
+    color: var(--color-green);
+    transition: color 200ms;
 }
 
 #wrapper {
     text-align: center;
-    padding: 32px;/*seguindo o padrão 'padding do header'*/
+    padding: 32px;
 }
 
 #wrapper img {
-    height: 250px; /*se a foto for muito grande, com esse comando delimitamos ela*/
-    border-radius: 50%; /*arredondamento das bordas da foto, se a foto for quadrado, usar '%'*/
-    border: 5px solid var(--color-green); /*adiciona bordar ao redor da foto*/
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid var(--color-green);
     margin-bottom: 32px;
 }
 
@@ -70,15 +60,15 @@ header {
 }
 
 #wrapper h2 {
-    font-weight: normal; /*peso da fonte*/
+    font-weight: normal;
     margin: 8px;
-    opacity: 0.8; /*escure a tonalidade do texto*/
+    opacity: 0.8;
 }
 
 #wrapper p {
-    max-width: 500px; /*largura máxima em relação a tela, e quando passa desse valor, quebra a linha*/
+    max-width: 500px;
     text-align: justify;
-    margin: 16px auto; /*'16px' dá um espaçamento na borda de fora do elemento em relação ao texto acima e 'auto' alinha o texto automaticamente conforme o texto acima*/
+    margin: 16px auto;
     font-size: 18px;
     line-height: 32px;
 }
@@ -88,25 +78,25 @@ header {
 }
 
 #links-footer a {
-    border-bottom: 1px solid var(--color-green); /*adiciona underline e cor nos links*/
+    border-bottom: 1px solid var(--color-green);
 }
 
 /*=== CARDS ===*/
 
 .cards {
     max-width: 800px;
-    margin: 0 auto; /*alinhamento superior '0' e alinhamento lateral 'auto', ou seja, irá centralizar conforme o tamanho máximo informado em 'max-width'*/
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px; /*Espaço entre os elementos do grid*/
+    gap: 20px;
 }
 
 .card {
-    background-color: var(--color-purple); /*cor de fundo nas informações do card*/
+    background-color: var(--color-purple);
 }
 
 .card__image-container img {
-    width: 100%; /*respeita o limite máximo definido pelo pai em 'max-width', ou seja, aquele que está acima dele, quanto mais próximo, maior o nível de respeito, ex: entre '.cards' e .'card__image-container' o '.card__image-container img' irá respeitar o '.card__image-container', pois é o mais próximo dele*/
+    width: 100%;
 }
 
 .card__content,
@@ -115,14 +105,14 @@ header {
 }
 
 .card__info {
-    display: grid; /*O grid mexe tanto no eixo 'x' quanto no eixo 'y'*/
-    grid-template-columns: 1fr 1fr; /*informa a quantidade de colunas que quero, e 'fr' é para o tamanho da largura de cada coluna, ou seja, ela é flexivel no tamanho*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .card__price {
     background-color: var(--color-purple);
-    filter: brightness(90%); /*adiciona brilho na fonte*/
-    padding: 5px 20px; /*espaçamento em cima e em baixo e nas laterais*/
+    filter: brightness(90%);
+    padding: 5px 20px;
     border-radius: 20px;
     text-align: center;
     color: var(--color-green);
@@ -131,40 +121,40 @@ header {
 
 /*=== MODAL ===*/
 .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.7); /*fundo do modal, um pouco transparente*/
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
-    position: fixed; /*o modal está fixado, porém fica no final do documento*/
-    top: 0; /*joga o modal para o topo, no caso, sobre todo o documento*/
-    opacity: 0; /*desaparece com o modal*/
-    visibility: hidden; /*quando usado o opacity 0, é necessário usar também, esse parâmetro para esconder a visibilidade das informações dentro do 'modal-overlay'*/
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.modal { /*esse modal é para o player de vídeo, e sobrepõe o modal anterior ao ser clicado*/
+.modal {
     background-color: white;
     width: 90%;
     height: 90%;
-    margin: 5vh auto; /*alinhamento do modal*/
-    position: relative; /*é necessário para que o 'position: absolute;' do filho possa ser movimentado*/
+    margin: 5vh auto;
+    position: relative;
 }
 
 .modal .close-modal {
     color: black;
-    position: absolute; /*útil para posicionar o botão em qualquer lugar da tela*/
-    right: 8px; /*inicia na posição 0 do lado direito, mas para que funcione, é necessário informar no pai '.modal' um 'position: relative;', e dá um espaço de '8px' em relação a lateral direita*/
-    top: 8px; /*espaço em relação ao topo*/
-    cursor: pointer; /*vira uma mãozinha ao passar o mouse, pois não tem o 'href' no arquivo html*/
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
 }
 
 /*=== MODAL.ACTIVE ===*/
-.modal-overlay.active { /*quando o .modal-overlay estiver active entra nessa configuração*/
-    opacity: 1; /*torna o modal visível*/
-    visibility: visible; /*torna visivel as informações dentro do modal, no caso o 'close-modal'*/
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 iframe {
     width: 100%;
-    height: 90%; /*'90%' é por causa do botão que tem que aparecer*/
-    position: absolute; /*cobre toda a posição do modal*/
-    top: 5%; /*dá um espaçamento do vídeo para aparecer o botão 'close-modal'*/
+    height: 90%;
+    position: absolute;
+    top: 5%;
 }
