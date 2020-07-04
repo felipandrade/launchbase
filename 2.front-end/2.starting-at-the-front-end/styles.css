@@ -13,6 +13,7 @@ Anotações:
 :root { /*criando variáveis com CSS*/
     --color-green: #50fa7b;
     --color-whitesmoke: whitesmoke;
+    --color-purple: #7159c1;
 }
 
 * { /*mini-reset do CSS*/
@@ -88,4 +89,82 @@ header {
 
 #links-footer a {
     border-bottom: 1px solid var(--color-green); /*adiciona underline e cor nos links*/
+}
+
+/*=== CARDS ===*/
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto; /*alinhamento superior '0' e alinhamento lateral 'auto', ou seja, irá centralizar conforme o tamanho máximo informado em 'max-width'*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px; /*Espaço entre os elementos do grid*/
+}
+
+.card {
+    background-color: var(--color-purple); /*cor de fundo nas informações do card*/
+}
+
+.card__image-container img {
+    width: 100%; /*respeita o limite máximo definido pelo pai em 'max-width', ou seja, aquele que está acima dele, quanto mais próximo, maior o nível de respeito, ex: entre '.cards' e .'card__image-container' o '.card__image-container img' irá respeitar o '.card__image-container', pois é o mais próximo dele*/
+}
+
+.card__content,
+.card__info {
+    padding: 24px;
+}
+
+.card__info {
+    display: grid; /*O grid mexe tanto no eixo 'x' quanto no eixo 'y'*/
+    grid-template-columns: 1fr 1fr; /*informa a quantidade de colunas que quero, e 'fr' é para o tamanho da largura de cada coluna, ou seja, ela é flexivel no tamanho*/
+}
+
+.card__price {
+    background-color: var(--color-purple);
+    filter: brightness(90%); /*adiciona brilho na fonte*/
+    padding: 5px 20px; /*espaçamento em cima e em baixo e nas laterais*/
+    border-radius: 20px;
+    text-align: center;
+    color: var(--color-green);
+    font-weight: bold;
+}
+
+/*=== MODAL ===*/
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /*fundo do modal, um pouco transparente*/
+    width: 100%;
+    height: 100%;
+    position: fixed; /*o modal está fixado, porém fica no final do documento*/
+    top: 0; /*joga o modal para o topo, no caso, sobre todo o documento*/
+    opacity: 0; /*desaparece com o modal*/
+    visibility: hidden; /*quando usado o opacity 0, é necessário usar também, esse parâmetro para esconder a visibilidade das informações dentro do 'modal-overlay'*/
+}
+
+.modal { /*esse modal é para o player de vídeo, e sobrepõe o modal anterior ao ser clicado*/
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto; /*alinhamento do modal*/
+    position: relative; /*é necessário para que o 'position: absolute;' do filho possa ser movimentado*/
+}
+
+.modal .close-modal {
+    color: black;
+    position: absolute; /*útil para posicionar o botão em qualquer lugar da tela*/
+    right: 8px; /*inicia na posição 0 do lado direito, mas para que funcione, é necessário informar no pai '.modal' um 'position: relative;', e dá um espaço de '8px' em relação a lateral direita*/
+    top: 8px; /*espaço em relação ao topo*/
+    cursor: pointer; /*vira uma mãozinha ao passar o mouse, pois não tem o 'href' no arquivo html*/
+}
+
+/*=== MODAL.ACTIVE ===*/
+.modal-overlay.active { /*quando o .modal-overlay estiver active entra nessa configuração*/
+    opacity: 1; /*torna o modal visível*/
+    visibility: visible; /*torna visivel as informações dentro do modal, no caso o 'close-modal'*/
+}
+
+iframe {
+    width: 100%;
+    height: 90%; /*'90%' é por causa do botão que tem que aparecer*/
+    position: absolute; /*cobre toda a posição do modal*/
+    top: 5%; /*dá um espaçamento do vídeo para aparecer o botão 'close-modal'*/
 }
